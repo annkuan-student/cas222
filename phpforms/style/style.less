@@ -1,0 +1,319 @@
+/*File Name: style.less
+Date: 2/11/2021
+Programmer: Ann Kuan
+*/
+
+/* VARIABLES */
+
+/* colors */
+
+@baseColor: white;
+@mBgColor: @baseColor;
+@footerColor: #FF0000;
+
+/* sizes */
+
+@mFontSize: 12pt;
+@tFontSize: @mFontSize * 1.2;
+@dFontSize: @mFontSize * 1.4;
+@h1FontSize: 1.75em;
+@h2FontSize: @h1FontSize * .7;
+@h3FontSize: @h1FontSize * .55;
+
+/* margins */
+
+@mMainMargin: 0 1em;
+@tMainMargin: 0 2em;
+@dMainMargin: 0 5em;
+
+
+/* padding */
+
+@mMainPadding: 1em 1em 1em;
+@tMainPadding: 2em 2em 2em;
+@mFooterPadding: 1em 1em;
+@tFooterPadding: 2em 2em;
+@dFooterPadding: 2em 3em;
+
+/* MOBILE STYLES */
+
+body {
+	font-family: 'Roboto Condensed';
+	line-height: 40px;
+}
+
+main {
+	padding: @mMainPadding;
+    margin: @mMainMargin;
+
+}
+
+p {
+	line-height: 1.5;
+	font-family: 'Roboto Condensed';
+    font-size: @mFontSize;
+}
+
+h1 {
+    font-size: 20pt;
+}
+
+header {
+    height: 50px;
+	border: none;
+	line-height: auto;
+	padding-top: 1em;
+    background-image: url(../images/birdviewrunning.jpg);
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+.hamburger {
+	background: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 45px;
+	color: #999;
+	border: 0;
+	font-size: 1.4em;
+	font-weight: 700;
+	cursor: pointer;
+	outline: none;
+	z-index: 10;
+	padding: 5px 15px 0;
+}
+
+.cross {
+	background: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #999;
+	border: 0;
+	font-size: 3em;
+	line-height: 65px;
+	font-weight: 700;
+	cursor: pointer;
+	outline: none;
+	z-index: 10;
+	padding: 7px 15px 0;
+}
+
+.menu {
+	z-index: 10;
+	font-weight: 700;
+	width: 50%;
+	background: #f1f1f1;
+	position: absolute;
+	top: 50px;
+	right: 0;
+	text-align: center;
+	font-size: 12px;
+}
+
+.menu ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+
+.menu li {
+	display: block;
+	border-bottom: #ddd 1px solid;
+	padding: 15px 0;
+}
+
+.menu li:hover {
+	display: block;
+	background: #fff;
+	border-bottom: #ddd 1px solid;
+	padding: 15px 0;
+}
+
+.menu ul li a {
+	text-decoration: none;
+	color: #666;
+	margin: 0;
+}
+
+.menu ul li a:hover {
+	color: #666;
+	text-decoration: none;
+}
+
+nav {
+	background-color: #FF0000;
+	font-weight: bold;
+	text-align: center;
+	font-size: @mFontSize;
+    
+}
+
+.fixedbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.navigation nav {
+	display: none;
+	list-style-type: none;
+	margin: 1em;
+}
+
+nav li {}
+
+nav a {
+	text-decoration: none;
+	padding: 1px;
+	font-size: 1em;
+	border-bottom: 1px;
+}
+
+nav a:link {
+	color: white;
+}
+
+nav a:visited {
+	color: #00303D;
+}
+
+nav a:hover {
+	color: #999999;
+}
+
+footer {
+    color: white;
+    background-color: @footerColor;
+    height: 50px;
+    padding: @mFooterPadding;
+}
+
+div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+input, select, textarea {
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+}
+
+/* Tablet CSS code and up */
+
+
+@media only screen and (min-width: 481px) {
+	body {
+		margin: 0px;
+		padding: 0px;
+		background-image: none;
+	}
+    
+    h1 {
+    font-size: 25pt;
+}
+    
+    header {
+        height: 300px;
+    }
+    
+    .hamburger {
+		display: none;
+	}
+	.cross {
+		display: none;
+	}
+    
+    .navigation nav {
+		display: block;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	nav {
+		float: none;
+		width: auto;
+		padding: .5em;
+        font-size: @dFontSize;
+	}
+	nav li {
+		display: inline-block;
+	}
+	nav a {
+		padding-right: 2em;
+	}
+	main {
+		padding: @tMainPadding;
+        margin: @tMainMargin;
+	}
+    
+    p {
+        font-size: @tFontSize;
+    }
+    
+    input, select, {
+        padding: 1em;
+    }
+    
+	footer {
+		padding: @tFooterPadding;
+	}
+
+}
+
+
+/* Desktop CSS code and up */
+
+@media only screen and (min-width: 1025px) {
+    main {
+        margin: @dMainMargin;
+    }
+    h1 {
+    font-size: 30pt;
+}
+    
+    p {
+        font-size: @dFontSize;
+    }
+    
+    header {
+		height: 400px;
+		
+	}
+	.hamburger {
+		display: none;
+	}
+	.cross {
+		display: none;
+	}
+	.navigation nav {
+        background-color: #FF0000;
+		display: block;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+    footer {
+        padding: @dFooterPadding;
+    }
+    form {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
